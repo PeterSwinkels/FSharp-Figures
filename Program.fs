@@ -12,7 +12,7 @@ let ProgramInformation = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAss
 
 //This module contains this program's main interface class.
 module private InterfaceModule =
-   let TO_RADIANS = 180.0 / Math.PI   //This value is used to convert degrees to radians.
+   let DEGREES_PER_RADIAN = 180.0 / Math.PI   //This defines the number degrees per radian.
 
    //This class contains this program's main interface window.
    type private InterfaceWindow() as Form = 
@@ -38,10 +38,10 @@ module private InterfaceModule =
             if List.isEmpty(radii) then
                ()
             else
-               let x = ((Math.Sin(angle / TO_RADIANS) * radii.Head) + centerX) |> int
-               let y = ((Math.Cos(angle / TO_RADIANS) * radii.Head) + centerY) |> int
-               let nextX = ((Math.Sin((angle + interval) / TO_RADIANS) * (if radii.Length = 1 then radii.Head else radii.Tail.Head)) + centerX) |> int
-               let nextY = ((Math.Cos((angle + interval) / TO_RADIANS) * (if radii.Length = 1 then radii.Head else radii.Tail.Head)) + centerY) |> int
+               let x = ((Math.Sin(angle / DEGREES_PER_RADIAN) * radii.Head) + centerX) |> int
+               let y = ((Math.Cos(angle / DEGREES_PER_RADIAN) * radii.Head) + centerY) |> int
+               let nextX = ((Math.Sin((angle + interval) / DEGREES_PER_RADIAN) * (if radii.Length = 1 then radii.Head else radii.Tail.Head)) + centerX) |> int
+               let nextY = ((Math.Cos((angle + interval) / DEGREES_PER_RADIAN) * (if radii.Length = 1 then radii.Head else radii.Tail.Head)) + centerY) |> int
                
                e.Graphics.DrawLine(Pens.Red, x, y, nextX, nextY)
 

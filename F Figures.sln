@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "F Figures", "F Figures.fsproj", "{579CD0C5-A43F-4C49-AF67-12AEE239CDD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{579CD0C5-A43F-4C49-AF67-12AEE239CDD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579CD0C5-A43F-4C49-AF67-12AEE239CDD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579CD0C5-A43F-4C49-AF67-12AEE239CDD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579CD0C5-A43F-4C49-AF67-12AEE239CDD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A30C8C5-7451-4F5A-868E-491D1359B099}
+	EndGlobalSection
+EndGlobal
