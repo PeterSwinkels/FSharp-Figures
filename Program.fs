@@ -34,7 +34,7 @@ module private InterfaceModule =
          let centerX = (this.ClientRectangle.Width |> float) / 2.0
          let centerY = (this.ClientRectangle.Height |> float) / 2.0
          
-         let rec drawFigure (radii:List<float>) (angle:float) (interval:float) = 
+         let rec drawFigure (radii:List<float>) (angle:float) (interval:float) (color:Pen)  = 
             if List.isEmpty(radii) then
                ()
             else
@@ -43,12 +43,12 @@ module private InterfaceModule =
                let nextX = ((Math.Sin((angle + interval) / DEGREES_PER_RADIAN) * (if radii.Length = 1 then radii.Head else radii.Tail.Head)) + centerX) |> int
                let nextY = ((Math.Cos((angle + interval) / DEGREES_PER_RADIAN) * (if radii.Length = 1 then radii.Head else radii.Tail.Head)) + centerY) |> int
                
-               e.Graphics.DrawLine(Pens.Red, x, y, nextX, nextY)
+               e.Graphics.DrawLine(color, x, y, nextX, nextY)
 
-               drawFigure radii.Tail (angle + interval) interval
-
-         drawFigure [300.0; 300.0; 300.0] 0.0 120.0
-         
+               drawFigure radii.Tail (angle + interval) interval color
+                       
+         drawFigure [300.0; 300.0; 300.0] 0.0 120.0 Pens.Red
+                  
       //This procedure adjusts this window's objects to its new size.
       member this.Form_Resize(sender:Object, e:EventArgs) = 
          this.Invalidate()
